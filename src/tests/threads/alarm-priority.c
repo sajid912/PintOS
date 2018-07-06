@@ -23,6 +23,7 @@ test_alarm_priority (void)
 
   wake_time = timer_ticks () + 5 * TIMER_FREQ;
   sema_init (&wait_sema, 0);
+  msg ("Testing msg 1");
   
   for (i = 0; i < 10; i++) 
     {
@@ -32,10 +33,13 @@ test_alarm_priority (void)
       thread_create (name, priority, alarm_priority_thread, NULL);
     }
 
+  msg ("Testing msg 2");
   thread_set_priority (PRI_MIN);
 
   for (i = 0; i < 10; i++)
     sema_down (&wait_sema);
+
+  msg ("Testing msg 3");
 }
 
 static void

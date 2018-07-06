@@ -101,7 +101,9 @@ struct thread
     /* Owned by thread.c. */
     unsigned magic;                     /* Detects stack overflow. */
 
+    // My code
     int sleep_ticks;   /* time for which thread should sleep */
+    
 
 
   };
