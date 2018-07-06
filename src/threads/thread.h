@@ -100,6 +100,10 @@ struct thread
 
     /* Owned by thread.c. */
     unsigned magic;                     /* Detects stack overflow. */
+
+    int sleep_ticks;   /* time for which thread should sleep */
+
+
   };
 
 /* If false (default), use round-robin scheduler.
